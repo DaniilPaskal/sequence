@@ -1,5 +1,5 @@
 import { shuffleArray } from "../components/Functions";
-import HistoryList from "../lists/historyList";
+import TestList from "../lists/TestList";
 
 const Home = () => {
     const cardArray = [];
@@ -9,7 +9,7 @@ const Home = () => {
     const playerCardArray = [];
 
     const startGame = () => {
-        cardArray = shuffleArray(HistoryList);
+        cardArray = shuffleArray(TestList);
 
         if (cardArray.length < cardsPerPlayer * numberOfPlayers) {
             alert('Card list too small for game settings');
