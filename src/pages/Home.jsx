@@ -1,5 +1,6 @@
 import { shuffleArray } from "../components/Functions";
 import TestList from "../lists/TestList";
+import './../App.css';
 
 const Home = () => {
     const cardArray = [];
@@ -35,7 +36,7 @@ const Home = () => {
                             <p>{card.text}</p>
                             <h4>{card.number}</h4>
                         </div>
-                        <div className='emptySpace'></div>
+                        <div className='empty-space'></div>
                     </>
                 );
             })}
