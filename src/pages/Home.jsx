@@ -26,6 +26,19 @@ const Home = () => {
     return (
         <div>
             <button onClick={startGame}>Start Game</button>
+
+            <div className='emptySpace'></div>
+            {playerCardArray.map((card) => {
+                return (
+                    <>
+                        <div className='card'>
+                            <p>{card.text}</p>
+                            <h4>{card.number}</h4>
+                        </div>
+                        <div className='emptySpace'></div>
+                    </>
+                );
+            })}
         </div>
     );
 }
