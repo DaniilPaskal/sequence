@@ -24,11 +24,15 @@ const Home = () => {
         }
     }
 
+    const placeCard = () => {
+
+    }
+
     return (
         <div>
             <button onClick={startGame}>Start Game</button>
 
-            <div className='emptySpace'></div>
+            <div className='emptySpace' onClick={placeCard}></div>
             {playerCardArray.map((card) => {
                 return (
                     <>
@@ -36,7 +40,7 @@ const Home = () => {
                             <p>{card.text}</p>
                             <h4>{card.number}</h4>
                         </div>
-                        <div className='empty-space'></div>
+                        <div className='empty-space' onClick={placeCard}></div>
                     </>
                 );
             })}
