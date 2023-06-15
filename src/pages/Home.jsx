@@ -8,6 +8,7 @@ const Home = () => {
     const cardsPerPlayer = 3;
     const cardsToEnd = 10;
     const playerCardArray = [];
+    var cardCounter = 0;
 
     const startGame = () => {
         cardArray = shuffleArray(TestList);
@@ -32,7 +33,7 @@ const Home = () => {
         <div>
             <button onClick={startGame}>Start Game</button>
 
-            <div className='emptySpace' onClick={placeCard}></div>
+            <div className='emptySpace' id={[0, playerCardArray[0].year]} onClick={placeCard}></div>
             {playerCardArray.map((card) => {
                 return (
                     <>
@@ -40,7 +41,7 @@ const Home = () => {
                             <p>{card.text}</p>
                             <h4>{card.number}</h4>
                         </div>
-                        <div className='empty-space' onClick={placeCard}></div>
+                        <div className='empty-space' id={[cardCounter.year, playerCardArray[cardCounter + 1].year]} onClick={placeCard}></div>
                     </>
                 );
             })}
