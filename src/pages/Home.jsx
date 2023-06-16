@@ -34,8 +34,8 @@ const Home = () => {
 
     const placeCard = (event) => {
         const { id } = event.target;
-        const startYear = cardCounter === 0 ? 0 : cardArray[id - 1].year;
-        const endYear = cardCounter === cardArray.length ? -1 : cardArray[id].year;
+        const startYear = id === 0 ? 0 : cardArray[id - 1].year;
+        const endYear = id === cardArray.length ? -1 : cardArray[id].year;
         const cardYear = currentCard.year;
         
         if (cardYear >= startYear && (cardYear <= endYear || endYear === -1)) {
