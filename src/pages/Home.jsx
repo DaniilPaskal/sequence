@@ -33,15 +33,16 @@ const Home = () => {
         <div>
             <button onClick={startGame}>Start Game</button>
 
-            <div className='emptySpace' id={[0, playerCardArray[0].year]} onClick={placeCard}></div>
+            <div className='emptySpace' id={cardCounter} onClick={placeCard}></div>
             {playerCardArray.map((card) => {
+                cardCounter++;
                 return (
                     <>
                         <div className='card'>
                             <p>{card.text}</p>
                             <h4>{card.number}</h4>
                         </div>
-                        <div className='empty-space' id={[cardCounter.year, playerCardArray[cardCounter + 1].year]} onClick={placeCard}></div>
+                        <div className='empty-space' id={cardCounter} onClick={placeCard}></div>
                     </>
                 );
             })}
