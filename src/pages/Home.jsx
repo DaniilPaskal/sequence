@@ -9,6 +9,7 @@ const Home = () => {
     const cardsToEnd = 10;
     const playerCardArray = [];
     var cardCounter = 0;
+    var currentCard = cardArray[0];
 
     const startGame = () => {
         cardArray = shuffleArray(TestList);
@@ -25,8 +26,17 @@ const Home = () => {
         }
     }
 
-    const placeCard = () => {
-
+    const placeCard = (event) => {
+        const { id } = event.target;
+        const startYear = cardCounter === 0 ? 0 : cardArray[id - 1].year;
+        const endYear = cardCounter === cardArray.length ? -1 : cardArray[id].year;
+        const cardYear = currentCard.year;
+        
+        if (cardYear >= startYear && (cardYear <= endYear || endYear === -1)) {
+            //correct
+        } else {
+            //incorrect
+        }
     }
 
     return (
