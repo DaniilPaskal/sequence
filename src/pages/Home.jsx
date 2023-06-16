@@ -26,6 +26,10 @@ const Home = () => {
         }
     }
 
+    const getNextCard = () => {
+        currentCard = cardArray.pop;
+    }
+
     const placeCard = (event) => {
         const { id } = event.target;
         const startYear = cardCounter === 0 ? 0 : cardArray[id - 1].year;
