@@ -39,10 +39,12 @@ const Home = () => {
         const cardYear = currentCard.year;
         
         if (cardYear >= startYear && (cardYear <= endYear || endYear === -1)) {
-            //correct
+            playerCardArray.splice(id === 0 ? 0 : id - 1, 0, currentCard);
         } else {
             //incorrect
         }
+
+        getNextCard();
     }
 
     return (
