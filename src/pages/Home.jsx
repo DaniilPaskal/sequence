@@ -9,7 +9,7 @@ const Home = () => {
     const cardsToEnd = 10;
     const playerCardArray = [];
     var cardCounter = 0;
-    var currentCard = cardArray[0];
+    var currentCard;
 
     const startGame = () => {
         cardArray = shuffleArray(TestList);
@@ -24,6 +24,8 @@ const Home = () => {
                 playerCardArray.push(cardArray.pop());
             }
         }
+
+        getNextCard();
     }
 
     const getNextCard = () => {
