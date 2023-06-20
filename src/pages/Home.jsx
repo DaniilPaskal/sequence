@@ -40,6 +40,11 @@ const Home = () => {
         
         if (cardYear >= startYear && (cardYear <= endYear || endYear === -1)) {
             playerCardArray.splice(id === 0 ? 0 : id - 1, 0, currentCard);
+
+            if (playerCardArray.length == cardsToEnd) {
+                alert('You won!');
+                startGame();
+            }
         } else {
             //incorrect
         }
