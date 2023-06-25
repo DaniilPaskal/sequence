@@ -1,13 +1,14 @@
+import { useState } from "react";
 import { shuffleArray } from "../components/Functions";
 import TestList from "../lists/TestList";
 import './../App.css';
 
 const Home = () => {
+    const [playerCards, setPlayerCards] = useState([]);
     const cardArray = [];
     const numberOfPlayers = 1;
     const cardsPerPlayer = 3;
     const cardsToEnd = 10;
-    const playerCardArray = [];
     var cardCounter = 0;
     var currentCard;
 
@@ -21,7 +22,7 @@ const Home = () => {
 
         for (player in numberOfPlayers) {
             for (card in cardsPerPlayer) {
-                playerCardArray.push(cardArray.pop());
+                setPlayerCards(playerCards.push(cardArray.pop()));
             }
         }
 
@@ -39,9 +40,9 @@ const Home = () => {
         const cardYear = currentCard.year;
         
         if (cardYear >= startYear && (cardYear <= endYear || endYear === -1)) {
-            playerCardArray.splice(id === 0 ? 0 : id - 1, 0, currentCard);
+            setPlayerCards(playerCards.splice(id === 0 ? 0 : id - 1, 0, currentCard));
 
-            if (playerCardArray.length == cardsToEnd) {
+            if (playerCards.length == cardsToEnd) {
                 alert('You won!');
                 startGame();
             }
@@ -57,7 +58,7 @@ const Home = () => {
             <button onClick={startGame}>Start Game</button>
 
             <div className='emptySpace' id={cardCounter} onClick={placeCard}></div>
-            {playerCardArray.map((card) => {
+            {playerCards.map((card) => {
                 cardCounter++;
                 return (
                     <>
