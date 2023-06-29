@@ -47,7 +47,7 @@ const Home = () => {
                 startGame();
             }
         } else {
-            //incorrect
+            alert("Incorrect!");
         }
 
         getNextCard();
