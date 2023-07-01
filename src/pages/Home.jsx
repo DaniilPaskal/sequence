@@ -22,8 +22,8 @@ const Home = () => {
 
         for (let i = 0; i < numberOfPlayers; i++) {
             for (let j = 0; j < cardsPerPlayer; j++) {
-                var newArray = playerCards.push(cardArray.pop());
-                setPlayerCards(newArray);
+                playerCards.push(cardArray.pop());
+                setPlayerCards(playerCards);
             }
         }
 
