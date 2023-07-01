@@ -5,10 +5,10 @@ import './../App.css';
 
 const Home = () => {
     const [playerCards, setPlayerCards] = useState([]);
-    const cardArray = [];
     const numberOfPlayers = 1;
     const cardsPerPlayer = 3;
     const cardsToEnd = 10;
+    var cardArray = [];
     var cardCounter = 0;
     var currentCard;
 
@@ -20,9 +20,10 @@ const Home = () => {
             return;
         }
 
-        for (player in numberOfPlayers) {
-            for (card in cardsPerPlayer) {
-                setPlayerCards(playerCards.push(cardArray.pop()));
+        for (let i = 0; i < numberOfPlayers; i++) {
+            for (let j = 0; j < cardsPerPlayer; j++) {
+                var newArray = playerCards.push(cardArray.pop());
+                setPlayerCards(newArray);
             }
         }
 
