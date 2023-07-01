@@ -55,7 +55,7 @@ const Home = () => {
     }
 
     return (
-        <div>
+        <div className='card-container'>
             <button onClick={startGame}>Start Game</button>
 
             <div className='emptySpace' id={cardCounter} onClick={placeCard}></div>
