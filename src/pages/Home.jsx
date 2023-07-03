@@ -55,22 +55,23 @@ const Home = () => {
     }
 
     return (
-        <div className='card-container'>
+        <div>
             <button onClick={startGame}>Start Game</button>
-
-            <div className='empty-slot' id={cardCounter} onClick={placeCard}></div>
-            {playerCards.map((card) => {
-                cardCounter++;
-                return (
-                    <>
-                        <div className='card'>
-                            <p>{card.text}</p>
-                            <h4>{card.number}</h4>
-                        </div>
-                        <div className='empty-slot' id={cardCounter} onClick={placeCard}></div>
-                    </>
-                );
-            })}
+            <div className='card-container'>
+                <div className='empty-slot' id={cardCounter} onClick={placeCard}></div>
+                {playerCards.map((card) => {
+                    cardCounter++;
+                    return (
+                        <>
+                            <div className='card'>
+                                <p>{card.text}</p>
+                                <h4>{card.number}</h4>
+                            </div>
+                            <div className='empty-slot' id={cardCounter} onClick={placeCard}></div>
+                        </>
+                    );
+                })}
+            </div>
         </div>
     );
 }
