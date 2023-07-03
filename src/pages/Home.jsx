@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { shuffleArray } from "../components/Functions";
+import Card from "../components/Card";
 import TestList from "../lists/TestList";
 import './../App.css';
 
@@ -63,10 +64,7 @@ const Home = () => {
                     cardCounter++;
                     return (
                         <>
-                            <div className='card'>
-                                <p>{card.text}</p>
-                                <h4>{card.number}</h4>
-                            </div>
+                            <Card card={card} />
                             <div className='empty-slot' id={cardCounter} onClick={placeCard}></div>
                         </>
                     );
