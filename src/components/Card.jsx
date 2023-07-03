@@ -1,10 +1,12 @@
-const Card = ({ card }) => {
+const Card = ({ card, hideNumber = false }) => {
    const { text, number } = card;
 
     return (
         <div className='card'>
             <p>{text}</p>
-            <h4>{number}</h4>
+            {!hideNumber &&
+                <h4>{number}</h4>
+            }
         </div>
     );
 }
