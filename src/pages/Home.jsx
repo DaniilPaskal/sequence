@@ -10,8 +10,8 @@ const Home = () => {
     const cardsPerPlayer = 3;
     const cardsToEnd = 10;
     var cardArray = [];
+    var currentCard = [];
     var cardCounter = 0;
-    var currentCard;
 
     const startGame = () => {
         cardArray = shuffleArray(TestList);
@@ -58,6 +58,9 @@ const Home = () => {
     return (
         <div>
             <button onClick={startGame}>Start Game</button>
+            {currentCard != [] &&
+                <Card card={currentCard} hideNumber={true} />
+            }
             <div className='card-container'>
                 <div className='empty-slot' id={cardCounter} onClick={placeCard}></div>
                 {playerCards.map((card) => {
