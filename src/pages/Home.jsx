@@ -10,7 +10,7 @@ const Home = () => {
     const cardsPerPlayer = 3;
     const cardsToEnd = 10;
     var cardArray = [];
-    var currentCard = [];
+    var currentCard = {};
     var cardCounter = 0;
 
     const startGame = () => {
@@ -32,7 +32,7 @@ const Home = () => {
     }
 
     const getNextCard = () => {
-        currentCard = cardArray.pop;
+        currentCard = cardArray.pop();
     }
 
     const placeCard = (event) => {
@@ -58,7 +58,7 @@ const Home = () => {
     return (
         <div>
             <button onClick={startGame}>Start Game</button>
-            {currentCard != [] &&
+            {currentCard != {} &&
                 <Card card={currentCard} hideNumber={true} />
             }
             <div className='card-container'>
