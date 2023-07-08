@@ -31,8 +31,15 @@ const Home = () => {
         getNextCard();
     }
 
+    const endGame = () => {
+        alert('game over');
+    }
+
     const getNextCard = () => {
         currentCard = cardArray.pop();
+        if (!currentCard) {
+            endGame();
+        }
     }
 
     const placeCard = (event) => {
