@@ -37,12 +37,14 @@ const Home = () => {
 
     const placeCard = (event) => {
         const { id } = event.target;
-        const startYear = id === 0 ? 0 : cardArray[id - 1].year;
-        const endYear = id === cardArray.length ? -1 : cardArray[id].year;
+        const prevCard = cardArray[id - 1];
+        const nextCard = cardArray[id + 1];
+        const startYear = prevCard ? cardArray[id - 1].year : 0;
+        const endYear = nextCard ? cardArray[id].year: -1;
         const cardYear = currentCard.year;
         
         if (cardYear >= startYear && (cardYear <= endYear || endYear === -1)) {
-            setPlayerCards(playerCards.splice(id === 0 ? 0 : id - 1, 0, currentCard));
+            setPlayerCards(playerCards.splice((id === 0) ? 0 : id - 1, 0, currentCard));
 
             if (playerCards.length == cardsToEnd) {
                 alert('You won!');
