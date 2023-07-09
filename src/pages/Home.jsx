@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { shuffleArray } from "../components/Functions";
 import Card from "../components/Card";
+import GameBoard from "../components/GameBoard";
 import TestList from "../lists/TestList";
 import './../App.css';
 
