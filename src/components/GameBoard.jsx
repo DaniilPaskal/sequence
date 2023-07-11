@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { shuffleArray } from "../components/Functions";
 import Card from "../components/Card";
 
@@ -6,6 +6,10 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd }) =
     const [playerCards, setPlayerCards] = useState([]);
     var currentCard = {};
     var cardCounter = 0;
+
+    useEffect(() => {
+        startGame();
+    })
 
     const startGame = () => {
         cardArray = shuffleArray(TestList);
