@@ -8,10 +8,10 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd }) =
     var cardCounter = 0;
 
     useEffect(() => {
-        startGame();
+        initializeGame();
     })
 
-    const startGame = () => {
+    const initializeGame = () => {
         cardArray = shuffleArray(cardArray);
 
         for (let i = 0; i < numberOfPlayers; i++) {
@@ -48,7 +48,7 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd }) =
 
             if (playerCards.length == cardsToEnd) {
                 alert('You won!');
-                startGame();
+                initializeGame();
             }
         } else {
             alert("Incorrect!");
