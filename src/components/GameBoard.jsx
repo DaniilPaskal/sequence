@@ -4,7 +4,7 @@ import Card from "../components/Card";
 
 const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd }) => {
     const [playerCards, setPlayerCards] = useState([]);
-    var currentCard = {};
+    const [currentCard, setCurrentCard] = useState({});
     var cardCounter = 0;
 
     useEffect(() => {
@@ -29,7 +29,7 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd }) =
     }
 
     const getNextCard = () => {
-        currentCard = cardArray.pop();
+       setCurrentCard(cardArray.pop());
         if (!currentCard) {
             endGame();
         }
