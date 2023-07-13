@@ -10,9 +10,17 @@ const Home = () => {
     const cardsToEnd = 10;
     var cardArray = TestList;
 
+    const startGame = () => {
+        if (cardArray.length < cardsPerPlayer * numberOfPlayers) {
+            alert('Card list too small for game settings');
+        } else {
+            setGameActive(true);
+        }
+    }
+
     return (
         <div>
-            <button onClick={() => setGameActive(true)}>Start Game</button>
+            <button onClick={startGame}>Start Game</button>
             {gameActive &&
                 <GameBoard cardArray={cardArray} numberOfPlayers={numberOfPlayers} cardsPerPlayer={cardsPerPlayer} cardsToEnd={cardsToEnd} />
             }

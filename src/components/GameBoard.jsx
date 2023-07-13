@@ -14,11 +14,6 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd }) =
     const startGame = () => {
         cardArray = shuffleArray(cardArray);
 
-        if (cardArray.length < cardsPerPlayer * numberOfPlayers) {
-            alert('Card list too small for game settings');
-            return;
-        }
-
         for (let i = 0; i < numberOfPlayers; i++) {
             for (let j = 0; j < cardsPerPlayer; j++) {
                 playerCards.push(cardArray.pop());
