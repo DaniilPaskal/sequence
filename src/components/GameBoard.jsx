@@ -17,7 +17,7 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd }) =
         for (let i = 0; i < numberOfPlayers; i++) {
             for (let j = 0; j < cardsPerPlayer; j++) {
                 playerCards.push(cardArray.pop());
-                setPlayerCards(playerCards);
+                setPlayerCards(playerCards.sort((a, b) => a.number > b.number ? 1 : -1));
             }
         }
 
@@ -44,7 +44,9 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd }) =
         const cardYear = currentCard.year;
         
         if (cardYear >= startYear && (cardYear <= endYear || endYear === -1)) {
-            setPlayerCards(playerCards.splice((id === 0) ? 0 : id - 1, 0, currentCard));
+            playerCards.push(currentCard);
+            setPlayerCards(playerCards.sort((a, b) => a.number > b.number ? 1 : -1));
+
 
             if (playerCards.length == cardsToEnd) {
                 alert('You won!');
