@@ -12,7 +12,7 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd }) =
     })
 
     const startGame = () => {
-        cardArray = shuffleArray(TestList);
+        cardArray = shuffleArray(cardArray);
 
         if (cardArray.length < cardsPerPlayer * numberOfPlayers) {
             alert('Card list too small for game settings');
