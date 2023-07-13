@@ -64,7 +64,7 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd }) =
  
      return (
          <div className='game-board'>
-            {currentCard != {} &&
+            {currentCard &&
                 <Card card={currentCard} hideNumber={true} />
             }
             <div className='card-container'>
@@ -73,8 +73,8 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd }) =
                     cardCounter++;
                     return (
                         <>
-                            <Card card={card} />
-                            <div className='empty-slot' id={cardCounter} onClick={placeCard}></div>
+                            <Card card={card} key={card.number}/>
+                            <div className='empty-slot' id={cardCounter} key={cardCounter} onClick={placeCard}></div>
                         </>
                     );
                 })}
