@@ -32,7 +32,7 @@ const TestList = [
         number: 8
     },
     {
-        text: `nineth item`,
+        text: `ninth item`,
         number: 9
     },
     {
