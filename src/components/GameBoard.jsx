@@ -48,7 +48,7 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd }) =
             setPlayerCards(playerCards.sort((a, b) => a.number > b.number ? 1 : -1));
 
 
-            if (playerCards.length == cardsToEnd) {
+            if (playerCards.length === cardsToEnd) {
                 alert('You won!');
                 initializeGame();
             }
