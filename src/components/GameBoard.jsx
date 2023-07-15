@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { shuffleArray } from "../components/Functions";
 import Card from "../components/Card";
 
-const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd }) => {
+const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, setGameActive }) => {
     const [playerCards, setPlayerCards] = useState([]);
     const [currentCard, setCurrentCard] = useState({});
     var cardCounter = 0;
@@ -26,10 +26,11 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd }) =
 
     const endGame = () => {
         alert('game over');
+        setGameActive(false);
     }
 
     const getNextCard = () => {
-       setCurrentCard(cardArray.pop());
+        setCurrentCard(cardArray.pop());
         if (!currentCard) {
             endGame();
         }
@@ -67,6 +68,7 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd }) =
             <div className='card-container'>
                 <div className='empty-slot' id={cardCounter} onClick={placeCard}></div>
                 {playerCards.map((card) => {
+                    console.log(card)
                     cardCounter++;
                     return (
                         <>
