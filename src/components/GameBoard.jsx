@@ -60,26 +60,25 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, set
         getNextCard();
     }
  
-     return (
-         <div className='game-board'>
+    return (
+        <div className='game-board'>
             {currentCard &&
                 <Card card={currentCard} hideNumber={true} />
             }
             <div className='card-container'>
                 <div className='empty-slot' id={cardCounter} onClick={placeCard}></div>
                 {playerCards.map((card) => {
-                    console.log(card)
                     cardCounter++;
                     return (
                         <>
                             <Card card={card} key={card.number}/>
-                            <div className='empty-slot' id={cardCounter} key={cardCounter} onClick={placeCard}></div>
+                            <div className='empty-slot' id={cardCounter} key={-cardCounter} onClick={placeCard}></div>
                         </>
                     );
                 })}
             </div>
-         </div>
-     );
+        </div>
+    );
  }
  
  export default GameBoard;
