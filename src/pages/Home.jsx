@@ -22,7 +22,7 @@ const Home = () => {
         <div>
             <button onClick={startGame}>Start Game</button>
             {gameActive &&
-                <GameBoard cardArray={cardArray} numberOfPlayers={numberOfPlayers} cardsPerPlayer={cardsPerPlayer} cardsToEnd={cardsToEnd} />
+                <GameBoard cardArray={cardArray} numberOfPlayers={numberOfPlayers} cardsPerPlayer={cardsPerPlayer} cardsToEnd={cardsToEnd} setGameActive={setGameActive} />
             }
         </div>
     );
