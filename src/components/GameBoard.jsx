@@ -40,11 +40,11 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, set
         const { id } = event.target;
         const prevCard = cardArray[id - 1];
         const nextCard = cardArray[id + 1];
-        const startYear = prevCard ? cardArray[id - 1].year : 0;
-        const endYear = nextCard ? cardArray[id].year: -1;
-        const cardYear = currentCard.year;
+        const startNumber = prevCard ? cardArray[id - 1].year : 0;
+        const endNumber = nextCard ? cardArray[id].year: -1;
+        const cardNumber = currentCard.year;
         
-        if (cardYear >= startYear && (cardYear <= endYear || endYear === -1)) {
+        if (cardNumber >= startNumber && (cardNumber <= endNumber || endNumber === -1)) {
             playerCards.push(currentCard);
             setPlayerCards(playerCards.sort((a, b) => a.number > b.number ? 1 : -1));
 
