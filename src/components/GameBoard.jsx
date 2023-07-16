@@ -9,7 +9,7 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, set
 
     useEffect(() => {
         initializeGame();
-    })
+    }, [])
 
     const initializeGame = () => {
         cardArray = shuffleArray(cardArray);
