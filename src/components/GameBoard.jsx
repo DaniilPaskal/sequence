@@ -9,6 +9,7 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, set
 
     useEffect(() => {
         initializeGame();
+        console.log('do')
     }, [])
 
     const initializeGame = () => {
@@ -38,11 +39,16 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, set
 
     const placeCard = (event) => {
         const { id } = event.target;
-        const prevCard = cardArray[id - 1];
-        const nextCard = cardArray[id + 1];
-        const startNumber = prevCard ? cardArray[id - 1].number : 0;
-        const endNumber = nextCard ? cardArray[id].number: -1;
+        const prevCard = playerCards[id - 1];
+        const nextCard = playerCards[id + 1];
+        const startNumber = prevCard ? prevCard.number : 0;
+        const endNumber = nextCard ? nextCard.number : -1;
         const cardNumber = currentCard.number;
+
+        console.log(cardArray)
+        console.log(prevCard);
+        console.log(nextCard);
+        console.log(startNumber, cardNumber, endNumber);
         
         if (cardNumber >= startNumber && (cardNumber <= endNumber || endNumber === -1)) {
             playerCards.push(currentCard);
