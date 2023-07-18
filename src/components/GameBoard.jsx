@@ -39,17 +39,11 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, set
 
     const placeCard = (event) => {
         const { id } = event.target;
-        console.log("id " + id)
         const prevCard = playerCards[id - 1];
         const nextCard = playerCards[id];
         const startNumber = prevCard ? prevCard.number : 0;
         const endNumber = nextCard ? nextCard.number : -1;
         const cardNumber = currentCard.number;
-
-        console.log(playerCards)
-        console.log(prevCard);
-        console.log(nextCard);
-        console.log(startNumber, cardNumber, endNumber);
         
         if (cardNumber >= startNumber && (cardNumber <= endNumber || endNumber === -1)) {
             playerCards.push(currentCard);
