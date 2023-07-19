@@ -9,7 +9,6 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, set
 
     useEffect(() => {
         initializeGame();
-        console.log('do')
     }, [])
 
     const initializeGame = () => {
