@@ -30,12 +30,12 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, set
     }
 
     const getNextCard = () => {
-        setCurrentCard(cardArray.pop());
-        if (!currentCard) {
+        if (cardArray.length > 0) {
+            setCurrentCard(cardArray.pop());
+        } else {
             setMessage('Game over!');
             endGame();
         }
-        console.log(currentCard)
     }
 
     const placeCard = (event) => {
