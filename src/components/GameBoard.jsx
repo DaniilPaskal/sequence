@@ -26,15 +26,16 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, set
     }
 
     const endGame = () => {
-        setMessage('Game over!');
         setGameActive(false);
     }
 
     const getNextCard = () => {
         setCurrentCard(cardArray.pop());
         if (!currentCard) {
+            setMessage('Game over!');
             endGame();
         }
+        console.log(currentCard)
     }
 
     const placeCard = (event) => {
@@ -49,10 +50,9 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, set
             playerCards.push(currentCard);
             setPlayerCards(playerCards.sort((a, b) => a.number > b.number ? 1 : -1));
 
-
             if (playerCards.length === cardsToEnd) {
                 setMessage('You won!');
-                initializeGame();
+                endGame();
             }
         } else {
             setMessage('incorrect!');
