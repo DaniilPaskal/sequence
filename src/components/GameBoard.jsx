@@ -49,6 +49,7 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, set
         if (cardNumber >= startNumber && (cardNumber <= endNumber || endNumber === -1)) {
             playerCards.push(currentCard);
             setPlayerCards(playerCards.sort((a, b) => a.number > b.number ? 1 : -1));
+            setMessage('');
 
             if (playerCards.length === cardsToEnd) {
                 setMessage('You won!');
