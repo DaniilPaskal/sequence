@@ -5,6 +5,7 @@ import Card from "../components/Card";
 const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, setGameActive }) => {
     const [playerCards, setPlayerCards] = useState([]);
     const [currentCard, setCurrentCard] = useState({});
+    const [message, setMessage] =  useState('');
     var cardCounter = 0;
 
     useEffect(() => {
@@ -25,7 +26,7 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, set
     }
 
     const endGame = () => {
-        alert('game over');
+        setMessage('Game over!');
         setGameActive(false);
     }
 
@@ -50,11 +51,11 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, set
 
 
             if (playerCards.length === cardsToEnd) {
-                alert('You won!');
+                setMessage('You won!');
                 initializeGame();
             }
         } else {
-            alert("Incorrect!");
+            setMessage('incorrect!');
         }
 
         getNextCard();
@@ -65,6 +66,9 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, set
             {currentCard &&
                 <Card card={currentCard} hideNumber={true} />
             }
+            <div className='message-container'>
+                {message}
+            </div>
             <div className='card-container'>
                 <div className='empty-slot' id={cardCounter} onClick={placeCard}></div>
                 {playerCards.map((card) => {
