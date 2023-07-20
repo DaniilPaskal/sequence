@@ -20,9 +20,10 @@ const Home = () => {
 
     return (
         <div>
-            <button onClick={startGame}>Start Game</button>
-            {gameActive &&
+            {gameActive ?
                 <GameBoard cardArray={[...cardArray]} numberOfPlayers={numberOfPlayers} cardsPerPlayer={cardsPerPlayer} cardsToEnd={cardsToEnd} gameActive={gameActive} setGameActive={setGameActive} />
+                :
+                <button onClick={startGame}>Start Game</button>
             }
         </div>
     );
