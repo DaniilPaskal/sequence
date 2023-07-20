@@ -7,7 +7,7 @@ const Home = () => {
     const [gameActive, setGameActive] = useState(false);
     const numberOfPlayers = 1;
     const cardsPerPlayer = 3;
-    const cardsToEnd = 10;
+    const cardsToEnd = 5;
     var cardArray = TestList;
 
     const startGame = () => {
@@ -22,7 +22,7 @@ const Home = () => {
         <div>
             <button onClick={startGame}>Start Game</button>
             {gameActive &&
-                <GameBoard cardArray={cardArray} numberOfPlayers={numberOfPlayers} cardsPerPlayer={cardsPerPlayer} cardsToEnd={cardsToEnd} setGameActive={setGameActive} />
+                <GameBoard cardArray={cardArray} numberOfPlayers={numberOfPlayers} cardsPerPlayer={cardsPerPlayer} cardsToEnd={cardsToEnd} gameActive={gameActive} setGameActive={setGameActive} />
             }
         </div>
     );
