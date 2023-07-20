@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { shuffleArray } from "../components/Functions";
 import Card from "../components/Card";
 
-const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, setGameActive }) => {
+const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, gameActive, setGameActive }) => {
     const [playerCards, setPlayerCards] = useState([]);
     const [currentCard, setCurrentCard] = useState({});
     const [message, setMessage] =  useState('');
