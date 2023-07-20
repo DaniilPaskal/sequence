@@ -40,6 +40,10 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, gam
     }
 
     const placeCard = (event) => {
+        if (!currentCard) {
+            return;
+        }
+
         const { id } = event.target;
         const prevCard = playerCards[id - 1];
         const nextCard = playerCards[id];
