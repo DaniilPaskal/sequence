@@ -6,6 +6,7 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, gam
     const [playerCards, setPlayerCards] = useState([]);
     const [currentCard, setCurrentCard] = useState({});
     const [message, setMessage] =  useState('');
+    const [gameEnded, setGameEnded] = useState(false);
     var cardCounter = 0;
 
     useEffect(() => {
@@ -34,7 +35,7 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, gam
             setCurrentCard(cardArray.pop());
         } else {
             setMessage('Game over!');
-            endGame();
+            setGameEnded(true);
         }
     }
 
@@ -53,7 +54,7 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, gam
 
             if (playerCards.length === cardsToEnd) {
                 setMessage('You won!');
-                endGame();
+                setGameEnded(true);
             }
         } else {
             setMessage('incorrect!');
@@ -64,6 +65,9 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, gam
  
     return (
         <div className='game-board'>
+            {gameEnded &&
+                <button onClick={endGame}>Back to menu</button>
+            }
             {currentCard &&
                 <Card card={currentCard} hideNumber={true} />
             }
