@@ -69,7 +69,7 @@ const GameBoard = ({ cardArray, numberOfPlayers, cardsPerPlayer, cardsToEnd, gam
  
     return (
         <div className='game-board'>
-            <button onClick={endGame}>Back to menu</button>
+            <button className='game-button' onClick={endGame}>Back to menu</button>
             {currentCard &&
                 <Card card={currentCard} hideNumber={true} />
             }

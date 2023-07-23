@@ -23,7 +23,7 @@ const Home = () => {
             {gameActive ?
                 <GameBoard cardArray={[...cardArray]} numberOfPlayers={numberOfPlayers} cardsPerPlayer={cardsPerPlayer} cardsToEnd={cardsToEnd} gameActive={gameActive} setGameActive={setGameActive} />
                 :
-                <button onClick={startGame}>Start Game</button>
+                <button className='game-button' onClick={startGame}>Start Game</button>
             }
         </div>
     );
