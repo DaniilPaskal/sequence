@@ -10,13 +10,18 @@
   height: 200pt;
   width: 80pt;
   border-color: black;
+  border-width: 2pt;
   border-radius: 15%;
   background-color: white;
 }
 
 .empty-slot {
   height: 200pt;
-  width: 20pt;
+  width: 40pt;
   border-radius: 15%;
   background-color: gray;
+}
+
+.game-button {
+
 }
