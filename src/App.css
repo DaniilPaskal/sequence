@@ -4,6 +4,8 @@
 
 .card-container {
   display: flex;
+  flex-direction: row;
+  margin: auto;
 }
 
 .card {
@@ -13,6 +15,7 @@
   border-width: 2pt;
   border-radius: 15%;
   background-color: white;
+  margin: 5pt;
 }
 
 .empty-slot {
@@ -20,6 +23,7 @@
   width: 40pt;
   border-radius: 15%;
   background-color: gray;
+  margin: 5pt;
 }
 
 .game-button {
